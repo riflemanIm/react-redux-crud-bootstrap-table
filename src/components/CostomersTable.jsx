@@ -44,7 +44,7 @@ const dateTimeFormatter = (cell, row) => {
   //return d;
   return `${("0" + d.getDate()).slice(-2)}.${("0" + (d.getMonth() + 1)).slice(
     -2
-  )}.${d.getFullYear()}`;
+  )}.${d.getFullYear()}<br/>${d.getHours()}:${d.getMinutes()} `;
 };
 class CostomersTable extends React.Component {
   constructor(props) {
@@ -135,7 +135,7 @@ class CostomersTable extends React.Component {
         <TableHeaderColumn
           dataField="updatedAt"
           dataSort={true}
-          //dataFormat={dateFormatter}
+          dataFormat={dateTimeFormatter}
         >
           updated
         </TableHeaderColumn>
