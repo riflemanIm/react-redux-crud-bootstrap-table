@@ -46,6 +46,7 @@ const dateTimeFormatter = (cell, row) => {
     -2
   )}.${d.getFullYear()}<br/>${d.getHours()}:${d.getMinutes()} `;
 };
+
 class CostomersTable extends React.Component {
   constructor(props) {
     super(props);
@@ -96,9 +97,10 @@ class CostomersTable extends React.Component {
         bordered={false}
         hover
         condensed
+        pagination
       >
         <TableHeaderColumn dataField="id" isKey>
-          Id
+          id
         </TableHeaderColumn>
 
         <TableHeaderColumn
