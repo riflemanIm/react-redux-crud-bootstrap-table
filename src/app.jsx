@@ -7,14 +7,10 @@ import createBrowserHistory from "history/createBrowserHistory";
 
 import Costomers from "./pages/costomers";
 import CostomerAddEdit from "./pages/costomerAddEdit";
-//import "style/style.css";
-//import "/bootstrap/css/bootstrap.min.css";
 import "toastr/build/toastr.min.css";
-//import "style/font-awesome.min.css";
 import "react-bootstrap-table/dist/react-bootstrap-table.min.css";
 
 const history = createBrowserHistory();
-//const store = configureStore();
 
 render(
   <Provider store={store}>
