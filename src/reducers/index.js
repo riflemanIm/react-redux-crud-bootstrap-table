@@ -1,9 +1,18 @@
 import { combineReducers } from "redux";
-import { costomersList, selectedCostomer, loading } from "./reducer_costomers";
+import { customersList, selectedCustomer } from "./reducerCustomers";
 import { reducer as formReducer } from "redux-form";
 export default combineReducers({
-  costomersList,
-  selectedCostomer,
+  customersList,
+  selectedCustomer,
   loading,
   form: formReducer
 });
+
+function loading(state = false, action) {
+  switch (action.type) {
+    case "LOADING":
+      return action.payload;
+    default:
+      return state;
+  }
+}

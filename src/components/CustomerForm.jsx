@@ -1,9 +1,10 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { Field, reduxForm } from "redux-form";
 import FieldInput from "./common/FieldInput";
 //import SelectInput from "./common/SelectInput";
 
-export const CostomerForm = ({
+export const CustomerForm = ({
   handleSubmit,
   pristine,
   reset,
@@ -97,6 +98,6 @@ reduxForm.propTypes = {
 };
 
 export default reduxForm({
-  form: "CostomerForm",
+  form: "CustomerForm",
   validate
-})(CostomerForm);
+})(CustomerForm);

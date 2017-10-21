@@ -232,21 +232,15 @@ app
     });
   })
   .put(function(req, res) {
-    console.log("-----" + req.params.customer_id + "-------\n");
-    if (_.isNumber(req.params.customer_id))
-      Customer.findById(req.params.customer_id).then(function(customer) {
-        customer
-          .update(_.pick(req.body, ["name", "address", "phone"]))
-          .then(function(customer) {
-            res.json(customer);
-          });
-      });
-    else
-      Customer.create({
-        name: req.body.name,
-        address: req.body.address,
-        phone: req.body.phone
-      });
+    console.log("-----" + _.isNumber(req.params.customer_id) + "-------\n");
+
+    Customer.findById(req.params.customer_id).then(function(customer) {
+      customer
+        .update(_.pick(req.body, ["name", "address", "phone"]))
+        .then(function(customer) {
+          res.json(customer);
+        });
+    });
   })
   .delete(function(req, res) {
     Customer.findById(req.params.customer_id).then(function(customer) {
